@@ -1,0 +1,11 @@
+<center>
+<h1>HI THIS IS THE CREATURE INDEX PAGE</h1>
+<h2>Ooh so scary!</h2>
+
+<% @creatures.each do |creature| %>
+<li><%= creature.name %></li>
+<%  end  %>
+
+<%= link_to "Create a New Creatures", creatures_new_path %>
+
+</center>

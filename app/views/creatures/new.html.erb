@@ -1,0 +1,9 @@
+<center>
+<h1>Create A New Creature</h1>
+
+<%= form_for(@creatures) do |f| %>
+	<%= f.text_field :name, :placeholder => "Enter Name" %>
+	<%= f.text_field :desc, :placeholder => "Enter Description"%>
+	<%= f.submit %>
+<% end %>
+</center>
