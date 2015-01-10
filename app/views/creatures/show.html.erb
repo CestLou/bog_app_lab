@@ -1,2 +1,16 @@
-<h1> <%= @creature.name %> </h1>
-<h2> <%= @creature.desc %> </h2>
+<div>
+	<h1>(◟ᅇ)◜ <%= @creature.name %> ◟(ᅇ◜)</h1>
+</div>
+
+<div>
+	<h2> <%= @creature.desc %> </h2>
+</div>
+<p>
+	<%= link_to "Back to Creatures", creatures_path %>
+	<br />
+	<%= link_to "Create Another Creature", new_creature_path %>
+	<br />
+	<%= link_to "March Through The Bog", bog_path %>
+
+
+</p>
