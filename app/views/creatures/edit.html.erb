@@ -1,0 +1,11 @@
+<h1>Edit: <%= @creature.name %> </h1>
+<div>
+	<%= form_for(@creature) do |f| %>
+	<%= f.text_field :name, :placeholder => "New Name" %>
+	</div>
+	<br />
+	<div>
+	<%= f.text_area :desc, :placeholder => "New Description" %>
+	<%= f.submit %>
+	<% end %>
+</div>

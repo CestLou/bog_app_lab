@@ -1,12 +1,12 @@
 <center>
-<h1>Create A New Creature</h1>
+<h1>Create A New Pooch</h1>
 
 <%= form_for(@creatures) do |f| %>
 	<%= f.text_field :name, :placeholder => "Enter Name" %>
-	<%= f.text_field :desc, :placeholder => "Enter Description"%>
+	<%= f.text_area :desc, :placeholder => "Enter Breed"%>
 	<%= f.submit %>
 <% end %>
 <br />
-<h3><%= link_to "Back to Creatures", creatures_path %></h3>
+<h3><%= link_to "Back to Dogs", creatures_path %></h3>
 
 </center>

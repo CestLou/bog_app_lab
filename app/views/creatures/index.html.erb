@@ -1,29 +1,29 @@
 <center>
-<h1>THIS IS THE CREATURE INDEX PAGE</h1>
-<h2>(◟ᅇ)◜(◟ᅇ)◜ Ooh so scary! ◟(ᅇ◜)◟(ᅇ◜)</h2>
-<!--
-
-<h3><li></li></h3>
-
-
-
-</center>
-
- -->
+<h1>SO MANY DOGS</h1>
+<h2>∪･ω･∪  woof!  ∪･ω･∪</h2>
 <div class="col-md-12">
 <table class="table">
 	<tr>
 		<th>Name:</th>
 		<th>Description:</th>
+		<th>Options:</th>
+		<th></th>
+		<th></th>
 	</tr>
 	<% @creatures.each do |creature| %>
 	<tr>
-
+		<td> <%=link_to creature.name, creature %></td>
+		<td> <%=creature.desc %> </td>
+		<td>	<%= link_to 'Show', creature, :class => 'btn btn-primary' %>	</td>
+		<td>  <%= link_to 'Delete', creature, method: :delete, data: { confirm: "Are you sure?" }, :class => 'btn btn-danger' %>	</td>
+		<td>	<%= link_to 'Edit', edit_creature_path(creature), :class => 'btn btn-warning' %>	</td>
 	</tr>
 	<% end %>
 </table>
 </div>
 <div class="col-md-12">
 	<h2>
+	<%= link_to "Create a New Dog", new_creature_path %>
+
 	</h2>
 </div>

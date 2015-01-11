@@ -1,16 +1,25 @@
 <div>
-	<h1>(◟ᅇ)◜ <%= @creature.name %> ◟(ᅇ◜)</h1>
+	<h1>∪･ω･∪ <%= @creature.name %> ∪･ω･∪</h1>
 </div>
 
 <div>
 	<h2> <%= @creature.desc %> </h2>
 </div>
+
+<div> <%= link_to "Edit this Canine", edit_creature_path(@creature), :class => 'btn btn-warning' %> </div>
+
 <p>
-	<%= link_to "Back to Creatures", creatures_path %>
+	<%= link_to "Back to Pooches", creatures_path %>
 	<br />
-	<%= link_to "Create Another Creature", new_creature_path %>
+	<%= link_to "Create Another Dog", new_creature_path %>
 	<br />
-	<%= link_to "March Through The Bog", bog_path %>
-
-
+	<%= link_to "Back to Home", bogs_path %>
+	<br />
 </p>
+
+<h1>Results</h1>
+
+<% @results.each do |photo| %>
+<%= link_to image_tag(photo.first), photo.last %>
+
+<% end %>
