@@ -1,0 +1,38 @@
+<%= form_for @creature, :html => { :class => "form-horizontal creature" } do |f| %>
+
+    <% if @creature.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@creature.errors.count, "error") %> prohibited this creature from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @creature.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@creature[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :desc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :desc, :class => 'form-control' %>
+    </div>
+    <%= error_span(@creature[:desc]) %>
+  </div>
+
+<br />
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            creatures_path, :class => 'btn btn-default' %>
+
+<% end %>

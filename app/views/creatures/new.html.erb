@@ -1,12 +1,6 @@
-<center>
-<h1>Create A New Pooch</h1>
-
-<%= form_for(@creatures) do |f| %>
-	<%= f.text_field :name, :placeholder => "Enter Name" %>
-	<%= f.text_area :desc, :placeholder => "Enter Breed"%>
-	<%= f.submit %>
-<% end %>
+<%- model_class = Creature -%>
+<div class="page-header">
+  <h1>New Pup</h1>
+</div>
 <br />
-<h3><%= link_to "Back to Dogs", creatures_path %></h3>
-
-</center>
+<%= render :partial => 'form' %>

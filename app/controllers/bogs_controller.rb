@@ -4,9 +4,8 @@ class BogsController < ApplicationController
 
 	end
 
-	def bog
+	def show
 
 	end
-
 
 end

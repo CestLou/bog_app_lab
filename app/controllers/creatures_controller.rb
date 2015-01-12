@@ -2,7 +2,7 @@ class CreaturesController < ApplicationController
 	before_action :fetch_creature, only: [:show, :update, :destroy, :edit]
 
 	def index
-		@creatures = Creature.all
+		@creature = Creature.all
 	end
 
 	def creature
@@ -10,7 +10,7 @@ class CreaturesController < ApplicationController
 	end
 
 	def new
-		@creatures = Creature.new
+		@creature = Creature.new
 	end
 
 	def create
@@ -38,13 +38,10 @@ class CreaturesController < ApplicationController
 		#fetch_creature
 
 		creature_id = params[:id]
-
-		creature = Creature.find(creature_id)
-
 		# get updated data
 		updated_attributes = params.require(:creature).permit(:name, :desc)
 		# update the creature
-		creature.update_attributes(updated_attributes)
+		@creature.update_attributes(updated_attributes)
 
 		#redirect to show
 		redirect_to "/creatures/#{creature_id}"
