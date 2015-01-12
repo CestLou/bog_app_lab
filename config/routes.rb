@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  get '*path' => redirect('/404.html')
   # Example resource route with options:
   #   resources :products do
   #     member do
@@ -49,10 +48,16 @@ Rails.application.routes.draw do
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
+
+  # match '/404' to: 'creatures#someerrorpage' via: :all
+  # match '/422' to: 'creatures#someerrorpage' via: :all
+  # match '/500' to: 'creatures#someerrorpage' via: :all
+
   # Example resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '*path' => redirect('/404.html')
 end
